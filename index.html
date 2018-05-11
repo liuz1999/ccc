@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>许愿墙</title>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/wish.js"></script>
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	ul{
+		padding: 20px;
+		position:relative;
+		/*background-color: blue;*/
+	}
+	li{
+		width: 100px;
+		height: 100px;
+		background-color:yellow;
+		font-size:20px;
+		color: red;
+		text-align: center;
+		line-height:100px;
+		cursor:move;
+	}
+	li:active{
+		opacity:.5;
+	}
+	</style>
+</head>
+<body>
+	<ul id="wish">
+		<li>00001</li>
+		<li>00002</li>
+		<li>00003</li>
+		<li>00004</li>
+		<li>00005</li>
+		<li>00006</li>
+		<li>00007</li>
+		<li>00008</li>
+		<li>00009</li>
+		<li>00010</li>
+		<li>00011</li>
+		<li>00012</li>
+	</ul>
+
+	<script>
+		var H = $(window).height();
+		// alert(H+'px');
+		$('ul').css('height',H+'px');
+		// alert($(window).height());
+		$('#wish').wish();
+		$('.wish').draggable({containment:'#wish',scroll:false});
+	</script>
+</body>
+</html>
